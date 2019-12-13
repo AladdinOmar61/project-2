@@ -1,6 +1,6 @@
 .roster {
   display: inline-grid;
-  padding-top: 100px;
+  grid-template-columns: repeat(auto-fill, 500px);
 }
 
 html {
@@ -8,5 +8,20 @@ html {
 }
 
 .image {
+  margin-left: 15%;
   padding: 10px;
+}
+
+.roster-click {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 47%;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+}
+
+.name {
+  text-align: center;
 }

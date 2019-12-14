@@ -7,7 +7,7 @@ const CharList = (props) => {
             {props.charNames.map((char, index) =>
             <div className="roster" key={index}>
                 <p className="name">{char.name}</p>
-                <img className="image" src={char.image}/>
+                <img className="image" src={char.image} alt="list of rick and morty characters"/>
             </div>
         )}
         </div>

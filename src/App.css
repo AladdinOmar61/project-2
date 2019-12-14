@@ -17,11 +17,15 @@ html {
   justify-content: center;
   align-items: center;
   margin-left: 47%;
-  margin-bottom: 20%;
+  margin-bottom: 30%;
   margin-top: 10%;
-  margin-bottom: 10px;
 }
 
 .name {
   text-align: center;
 }
+
+/* .login {
+
+} */
+

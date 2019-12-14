@@ -1,10 +1,14 @@
-import React from 'react';
+// import React from 'react';
 import axios from 'axios';
 
-async function CallApi () {
-    let allChars = await axios.get(`https://rickandmortyapi.com/api/character/`);
+export const CallApi = async () => {
+    const allChars = await axios.get(`https://rickandmortyapi.com/api/character/`);
     console.log(allChars.data.results);
     return allChars.data.results
 }
 
-export default CallApi;
+export const CallChar = async (character) => {
+    const getChar = await axios.get(`https://rickandmortyapi.com/api/character/${character}`)
+    console.log(getChar.data.image);
+    return getChar.data.image;
+}

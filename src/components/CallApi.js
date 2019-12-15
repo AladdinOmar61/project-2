@@ -10,5 +10,5 @@ export const CallApi = async () => {
 export const CallChar = async (character) => {
     const getChar = await axios.get(`https://rickandmortyapi.com/api/character/${character}`)
     console.log(getChar.data.image);
-    return getChar.data.image;
+    return getChar.data;
 }

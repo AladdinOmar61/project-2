@@ -5,6 +5,8 @@
 
 html {
   text-align: center;
+  background-color: black;
+  background: url("http://getwallpapers.com/wallpaper/full/1/e/c/1254729-desktop-space-backgrounds-1920x1080-notebook.jpg");
 }
 
 .image {
@@ -25,7 +27,16 @@ html {
   text-align: center;
 }
 
-/* .login {
+.title {
+  color: teal;
+  font-size: 70px;
+  -webkit-text-stroke: lightgreen 2px;
+  /* font-family: 'get_schwifty'; */
+}
 
-} */
+.slogan {
+  color: teal;
+  font-size: 50px;
+  -webkit-text-stroke: lightgreen 2px;
+}
 

@@ -10,15 +10,15 @@ function SingleChar(props) {
 
                 <input type="text" onChange={props.charSearch}></input>
                 <button type="submit">Search Character</button>
-                {props.apiCharLoaded &&
-                    <div className="char-info">
-                        <img src={props.charImg.image} alt={props.charImg.name} />
-                        <p className="name-list">Name: {props.charImg.name}</p>
-                        <p className="gender">Gender: {props.charImg.gender}</p>
-                        <p className="status">Status: {props.charImg.status}</p>
-                        <p className="species">Species: {props.charImg.species}</p>
+                <div className="char-info">
+                    <div>
+                        <img className="single-img" src={props.charImg.image}/>
+                        <p className="name-list"> {props.charImg.name}</p>
+                        <p className="gender"> {props.charImg.gender}</p>
+                        <p className="status"> {props.charImg.status}</p>
+                        <p className="species"> {props.charImg.species}</p>
                     </div>
-                }
+                </div>
             </form>
         </div>
     )

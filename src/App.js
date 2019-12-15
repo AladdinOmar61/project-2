@@ -39,7 +39,7 @@ class App extends Component {
     const charData = await CallChar(character);
     this.setState({
       charImg: charData,
-      apiCharLoaded: true,
+      apiImgLoaded: true
     })
   }
 
@@ -50,32 +50,13 @@ class App extends Component {
     })
   }
 
-
-  // postSubmit = (e) => {
-  //   e.preventDefault();
-  //   const posts = this.state.posts;
-  //   const newPost = {
-  //     author: this.state.author,
-  //     content: this.state.content,
-  //     title: this.state.title,
-  //     voteCount: 0
-  //   }
-  //   posts.push(newPost);
-  //   this.setState({
-  //     posts,
-  //     content: "",
-  //     title: ""
-  //   })
-  // }
-
   render() {
     return (
       <div className="App">
         <h1 className="title">Ricpic and Morty-Schmorty</h1>
         <h2 className="slogan">Why the hell are you here?</h2>
-        {/* <button className="login">Login</button>*/}
         <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />
-        <CharList charNames={this.state.charNames} onClick={this.clickForChars} />
+        <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />
       </div>
     );
   }

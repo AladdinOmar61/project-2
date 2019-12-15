@@ -8,7 +8,7 @@ const CharList = (props) => {
             <div className="roster" key={index}>
                 <img className="image" src={char.image} alt="list of rick and morty characters"/>
                 <p className="name">Name: {char.name}</p>
-                <p>ID: {char.id}</p>
+                <p className="identity">ID: {char.id}</p>
             </div>
         )}
         </div>

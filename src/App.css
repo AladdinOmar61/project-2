@@ -1,6 +1,7 @@
 .roster {
   display: inline-grid;
-  grid-template-columns: repeat(auto-fill, 500px);
+  grid-template-columns: repeat(auto-fill, 450px);
+  margin: 0 auto;
 }
 
 html {
@@ -38,5 +39,20 @@ html {
   color: teal;
   font-size: 50px;
   -webkit-text-stroke: lightgreen 2px;
+}
+
+.char-info {
+  color: teal;
+  -webkit-text-stroke: lightgreen 2px;
+}
+
+.name {
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+.identity {
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
 }
 

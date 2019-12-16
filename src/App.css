@@ -118,7 +118,7 @@ ul {
 .single-img {
   height: 450px;
   margin-top: 20px;
-  border: solid lightgreen 10px;
+  /* border: solid lightgreen 10px; */
   border-radius: 8px;
 }
 

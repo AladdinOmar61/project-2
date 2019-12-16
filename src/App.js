@@ -61,7 +61,7 @@ class App extends Component {
         <nav>
           <ul>
       <li><Link className="nav-home" to="/">Home</Link></li>
-      <li><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
+      <li><Link className="nav-list" clickForChars={this.clickForChars} to="/CharList">Ric-Pics</Link></li>
       <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
         </ul>
         </nav>

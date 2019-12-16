@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import {Link, Route} from 'react-router-dom';
+
 import { CallApi } from './components/CallApi';
 import { CallChar } from './components/CallApi';
 
@@ -53,10 +55,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="title">Ricpic and Morty-Schmorty</h1>
-        <h2 className="slogan">Why the hell are you here?</h2>
-        <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />
-        <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />
+        <nav>
+      <Link to="/CharList">Character List</Link>
+      <Link to="/SingleChar">Check a Single Character Profile</Link>
+        </nav>
+        <main>
+        <Route path="/CharList" render={ () => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
+        <Route path="/SingleChar" render={ () => <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+        </main>
       </div>
     );
   }

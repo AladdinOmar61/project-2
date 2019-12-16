@@ -8,8 +8,8 @@ function SingleChar(props) {
                 await props.onCharClick();
             }}>
 
-                <input type="text" onChange={props.charSearch}></input>
-                <button type="submit">Search Character</button>
+                <input className="search-bar" type="text" onChange={props.charSearch}></input>
+                <button className="find-button" type="submit">Find Ric Pic</button>
                 <div className="char-info">
                     <div>
                         <img className="single-img" src={props.charImg.image} alt=""/>

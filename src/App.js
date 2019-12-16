@@ -8,6 +8,7 @@ import { CallChar } from './components/CallApi';
 
 import CharList from './components/CharList';
 import SingleChar from './components/SingleChar';
+import Home from './components/Home';
 
 class App extends Component {
   constructor(props) {
@@ -56,14 +57,16 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="title">Ricpic and Morty-Schmorty</h1>
-        <h2 className="slogan">Why the hell are you here?</h2>
+        <h2 className="slogan">The Rick and Morty Website</h2>
         <nav>
           <ul>
-      <li><Link className="nav-list" to="/CharList">Character List</Link></li>
-      <li><Link className="nav-char" to="/SingleChar">Check a Single Character Profile</Link></li>
+      <li><Link className="nav-home" to="/">Home</Link></li>
+      <li><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
+      <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
         </ul>
         </nav>
         <main>
+        <Route exact path="/" render={ () => <Home />}></Route>
         <Route path="/CharList" render={ () => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
         <Route path="/SingleChar" render={ () => <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>

@@ -58,14 +58,112 @@ html {
 }
 
 .nav-list {
+  padding: 5px;
+  background-color: black;
+  border: solid lightgreen 2px;
+  border-radius: 5px;
   text-decoration: none;
   color: teal;
   -webkit-text-stroke: lightgreen 0.5px;
 }
 
 .nav-char {
+  padding: 5px;
+  background-color: black;
+  border: solid lightgreen 2px;
+  border-radius: 5px;
   text-decoration: none;
   color: teal;
   -webkit-text-stroke: lightgreen 0.5px;
 }
 
+.nav-home {
+  padding: 5px;
+  background-color: black;
+  border: solid lightgreen 2px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+.nav-list:hover {
+  font-size: 20px;
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+.nav-char:hover {
+  font-size: 20px;
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+.nav-home:hover {
+  font-size: 20px;
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.single-img {
+  height: 450px;
+  margin-top: 20px;
+  border: solid lightgreen 10px;
+  border-radius: 8px;
+}
+
+.search-bar {
+  border: solid lightgreen 3px;
+  border-radius: 25px;
+  background-color: black;
+  color: lightgreen;
+  width: 400px;
+  height: 40px;
+  font-size: 30px;
+}
+
+.find-button {
+  background-color: black;
+  border: solid lightgreen 3px;
+  border-radius: 4px;
+  margin-left: 10px;
+  color: lightgreen;
+  margin-top: 5%;
+  height: 40px;
+}
+
+button:focus {
+  outline:0;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+img:focus {
+  visibility: hidden;
+}
+
+.home-img {
+  margin-top: 10px;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  animation: spin 7s linear infinite;
+}
+
+@keyframes spin {
+   100% {
+      transform: rotate(360deg); 
+    } 
+  }

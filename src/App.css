@@ -167,3 +167,66 @@ img:focus {
       transform: rotate(360deg); 
     } 
   }
+
+  .home-anim {  
+    animation-name: float;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes float {
+  from {
+     transform: translate(0,  0px); 
+    }
+  75%  { 
+    transform: translate(0, 15px); 
+  }
+  to   { 
+    transform: translate(0, -0px); 
+  }    
+}
+
+.char-anim {  
+  animation-name: float2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes float2 {
+from {
+   transform: translate(0,  0px); 
+  }
+65%  { 
+  transform: translate(0, 15px); 
+}
+to   { 
+  transform: translate(0, -0px); 
+  }    
+}
+
+.search-anim {  
+  animation-name: float3;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes float3 {
+from {
+   transform: translate(0,  0px); 
+  }
+55%  { 
+  transform: translate(0, 15px); 
+}
+to   { 
+  transform: translate(0, -0px); 
+  }
+}

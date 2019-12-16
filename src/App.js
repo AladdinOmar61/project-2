@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {Link, Route} from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 import { CallApi } from './components/CallApi';
 import { CallChar } from './components/CallApi';
@@ -60,15 +60,21 @@ class App extends Component {
         <h2 className="slogan">The Rick and Morty Website</h2>
         <nav>
           <ul>
-      <li><Link className="nav-home" to="/">Home</Link></li>
-      <li><Link className="nav-list" clickForChars={this.clickForChars} to="/CharList">Ric-Pics</Link></li>
-      <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
-        </ul>
+            <div className="home-anim">
+              <li><Link className="nav-home" to="/">Home</Link></li>
+            </div>
+            <div className="char-anim">
+            <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
+            </div>
+            <div className="search-anim">
+            <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
+            </div>
+          </ul>
         </nav>
         <main>
-        <Route exact path="/" render={ () => <Home />}></Route>
-        <Route path="/CharList" render={ () => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
-        <Route path="/SingleChar" render={ () => <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+          <Route exact path="/" render={() => <Home />}></Route>
+          <Route path="/CharList" render={() => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
+          <Route path="/SingleChar" render={() => <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
       </div>
     );

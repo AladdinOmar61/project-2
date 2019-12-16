@@ -55,9 +55,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="title">Ricpic and Morty-Schmorty</h1>
+        <h2 className="slogan">Why the hell are you here?</h2>
         <nav>
-      <Link to="/CharList">Character List</Link>
-      <Link to="/SingleChar">Check a Single Character Profile</Link>
+          <ul>
+      <li><Link className="nav-list" to="/CharList">Character List</Link></li>
+      <li><Link className="nav-char" to="/SingleChar">Check a Single Character Profile</Link></li>
+        </ul>
         </nav>
         <main>
         <Route path="/CharList" render={ () => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>

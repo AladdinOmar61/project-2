@@ -57,3 +57,15 @@ html {
   -webkit-text-stroke: lightgreen 0.5px;
 }
 
+.nav-list {
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+
+.nav-char {
+  text-decoration: none;
+  color: teal;
+  -webkit-text-stroke: lightgreen 0.5px;
+}
+

@@ -9,6 +9,8 @@ import { CallChar } from './components/CallApi';
 import CharList from './components/CharList';
 import SingleChar from './components/SingleChar';
 import Home from './components/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ class App extends Component {
     const getChars = await CallApi();
     this.setState({
       charNames: getChars,
-      apiCharLoaded: true
+      apiCharLoaded: true,
     })
   }
 
@@ -42,22 +44,22 @@ class App extends Component {
     const charData = await CallChar(character);
     this.setState({
       charImg: charData,
-      apiImgLoaded: true
+      apiImgLoaded: true,
     })
   }
 
   onCharSubmit = (e) => {
     e.preventDefault();
     this.setState({
-      charSearch: ""
+      charSearch: "",
+      apiImgLoaded: true
     })
   }
 
   render() {
     return (
       <div className="App">
-        <h1 className="title">Ricpic and Morty-Schmorty</h1>
-        <h2 className="slogan">The Rick and Morty Website</h2>
+        <Header />
         <nav>
           <ul>
             <div className="home-anim">
@@ -74,8 +76,9 @@ class App extends Component {
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
           <Route path="/CharList" render={() => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
-          <Route path="/SingleChar" render={() => <SingleChar apiCharLoaded={this.state.apiCharLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+          <Route path="/SingleChar" render={() => <SingleChar apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
+        <Footer />
       </div>
     );
   }

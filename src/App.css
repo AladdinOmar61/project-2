@@ -7,9 +7,11 @@
 html {
   text-align: center;
   background-color: black;
-  background: url("http://getwallpapers.com/wallpaper/full/1/e/c/1254729-desktop-space-backgrounds-1920x1080-notebook.jpg");
+  background: url("https://i.imgur.com/3UxkcJ8.jpg");
   background-size: cover;
 }
+/* http://getwallpapers.com/wallpaper/full/1/e/c/1254729-desktop-space-backgrounds-1920x1080-notebook.jpg */
+/* https://i.imgur.com/3UxkcJ8.jpg */
 
 .image {
   margin-left: 15%;
@@ -60,6 +62,7 @@ html {
 }
 
 .nav-list {
+  font-size: 25px;
   padding: 5px;
   background-color: black;
   border: solid lightgreen 2px;
@@ -70,6 +73,7 @@ html {
 }
 
 .nav-char {
+  font-size: 25px;
   padding: 5px;
   background-color: black;
   border: solid lightgreen 2px;
@@ -80,6 +84,7 @@ html {
 }
 
 .nav-home {
+  font-size: 25px;
   padding: 5px;
   background-color: black;
   border: solid lightgreen 2px;
@@ -120,8 +125,10 @@ ul {
 .single-img {
   height: 450px;
   margin-top: 20px;
-  /* border: solid lightgreen 10px; */
+  width: 40vw;
+  border: solid lightgreen 1px;
   border-radius: 8px;
+  padding: 10px;
 }
 
 .search-bar {
@@ -131,17 +138,24 @@ ul {
   color: lightgreen;
   width: 400px;
   height: 40px;
-  font-size: 30px;
+  font-size: 25px;
+  padding-left: 10px;
 }
 
 .find-button {
   background-color: black;
   border: solid lightgreen 3px;
-  border-radius: 4px;
+  border-radius: 14px;
   margin-left: 10px;
   color: lightgreen;
-  margin-top: 5%;
+  margin-top: 1.5%;
   height: 40px;
+}
+
+.search-n-click {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 3%;
 }
 
 button:focus {
@@ -158,8 +172,8 @@ img:focus {
 
 .home-img {
   margin-top: 30px;
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
   border-radius: 100%;
   animation: spin 7s linear infinite;
 }
@@ -231,4 +245,15 @@ from {
 to   { 
   transform: translate(0, -0px); 
   }
+}
+
+.image {
+  margin-top: 20px;
+  border: solid lightgreen 1px;
+  border-radius: 8px;
+}
+
+footer {
+  color: lightgreen;
+  margin-top: 3%;
 }

@@ -28,3 +28,6 @@ Well, anyway, search for someone, get to know them for 3.7 seconds, then get bor
 - Add comments to people's profile pages
 - add up votes and down votes to profiles
 - add up and down votes for comments
+
+// improve button floating animation (rotate at different intervals, and have them rotate at different rates)
+// sound effect

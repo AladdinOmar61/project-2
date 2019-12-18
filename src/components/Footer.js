@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Footer () {
+function Footer (props) {
     return (
         <div>
             <footer>
-                <p className="wubaa">Wubba Lubba Dub Dub®</p>
-                <audio controls src="WUBBALUBBADUBDUB SOUND EFFECT.mp3"></audio>
+                <p onClick={props.onSoundClick} className="wubaa">Wubba Lubba Dub Dub®</p>
             </footer>
         </div>
     )

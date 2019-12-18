@@ -12,6 +12,8 @@ const CharList = (props) => {
                     </div>
                 </div>
             )}
+            <button onClick={props.clickForPages}>Previous</button>
+            <button onClick={props.clickForPages}>Next</button>
         </div>
     )
 }

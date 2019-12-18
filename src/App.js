@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 import { Link, Route } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ import SingleChar from './components/SingleChar';
 import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import soundclip from "./Audio/WUBBALUBBADUBDUB SOUND EFFECT.mp3";
 
 class App extends Component {
   constructor(props) {
@@ -20,8 +22,23 @@ class App extends Component {
       apiImgLoaded: false,
       charNames: [],
       charSearch: "",
-      charImg: []
+      charImg: [],
+      currPage: 1
     }
+    this.onSoundClick = this.onSoundClick.bind(this);
+    this.sound = new Audio(soundclip);
+  }
+
+  CharPage = async () => {
+    const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${this.state.currPage}`);
+    console.log(page);
+    return page;
+}
+
+  onSoundClick = (e) => {
+    e.preventDefault();
+    console.log('wubba');
+    this.sound.play();
   }
 
   clickForChars = async (e) => {
@@ -39,12 +56,15 @@ class App extends Component {
     })
   }
 
+
+
   onCharClick = async (e, character) => {
     character = this.state.charSearch;
     const charData = await CallChar(character);
     this.setState({
       charImg: charData,
       apiImgLoaded: true,
+      charSearch: ""
     })
   }
 
@@ -66,19 +86,19 @@ class App extends Component {
               <li><Link className="nav-home" to="/">Home</Link></li>
             </div>
             <div className="char-anim">
-            <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
+              <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
             </div>
             <div className="search-anim">
-            <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
+              <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
             </div>
           </ul>
         </nav>
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
-          <Route path="/CharList" render={() => <CharList charNames={this.state.charNames} clickForChars={this.clickForChars} />}></Route>
-          <Route path="/SingleChar" render={() => <SingleChar apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+          <Route path="/CharList" render={() => <CharList pageNum={this.pageNum} clickForPages={this.clickForPages} charNames={this.state.charNames} />}></Route>
+          <Route path="/SingleChar" render={() => <SingleChar value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
-        <Footer />
+        <Footer onSoundClick={this.onSoundClick} />
       </div>
     );
   }

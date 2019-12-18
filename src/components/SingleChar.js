@@ -8,8 +8,8 @@ function SingleChar(props) {
                 await props.onCharClick();
             }}>
                 <div className="search-n-click">
-                <input className="search-bar" type="text" placeholder="Pick a number between 1-493" onChange={props.charSearch}></input>
-                <button className="find-button" type="submit">Find Ric Pic</button>
+                <input value={props.value} className="search-bar" type="text" placeholder="Pick a number between 1-493" onChange={props.charSearch} ></input>
+                <button onSubmit={props.onCharSubmit} className="find-button" type="submit">Find Ric Pic</button>
                 </div>
                 {props.apiImgLoaded &&
                     <div className="char-info">

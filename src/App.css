@@ -176,6 +176,7 @@ img:focus {
   height: 420px;
   border-radius: 100%;
   animation: spin 7s linear infinite;
+  transform: rotate3d()
 }
 
 @keyframes spin {

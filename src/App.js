@@ -4,7 +4,6 @@ import axios from 'axios';
 
 import { Link, Route } from 'react-router-dom';
 
-// import { CallApi } from './components/CallApi';
 import { CallChar } from './components/CallApi';
 
 import CharList from './components/CharList';
@@ -29,20 +28,33 @@ class App extends Component {
     this.sound = new Audio(soundclip);
   }
 
-  CharPage = async () => {
-    const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${this.state.currPage}`);
-    console.log(page);
+  CharPage = async (pageNum=0) => {
+    const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNum}`);
     return page.data.results;
 }
 
   nextPage = async (e) => {
     e.preventDefault();
-    const pages = await this.CharPage();
     let next = this.state.currPage+1;
+    let pages = await this.CharPage(next);
     this.setState({
       currPage: next,
       charNames: pages,
+      apiCharLoaded: true
     })
+    console.log(this.state.currPage)
+  }
+
+  previousPage = async (e) => {
+    e.preventDefault();
+    let previous = this.state.currPage-1;
+    const pages = await this.CharPage(previous);
+    this.setState({
+      currPage: previous,
+      charNames: pages,
+      apiCharLoaded: true
+    })
+    console.log(this.state.currPage)
   }
 
   onSoundClick = (e) => {
@@ -104,7 +116,7 @@ class App extends Component {
         </nav>
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
-          <Route path="/CharList" render={() => <CharList nextPage={this.nextPage} charNames={this.state.charNames} />}></Route>
+          <Route path="/CharList" render={() => <CharList apiCharLoaded={this.apiCharLoaded} nextPage={this.nextPage} previousPage={this.previousPage} charNames={this.state.charNames} />}></Route>
           <Route path="/SingleChar" render={() => <SingleChar value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
         <Footer onSoundClick={this.onSoundClick} />

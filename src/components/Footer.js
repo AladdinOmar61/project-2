@@ -11,5 +11,3 @@ function Footer (props) {
 }
 
 export default Footer;
-
-// file:///Users/aladdinomar/Downloads/WUBBALUBBADUBDUB%20SOUND%20EFFECT.mp3

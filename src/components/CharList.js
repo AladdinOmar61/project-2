@@ -12,8 +12,12 @@ const CharList = (props) => {
                     </div>
                 </div>
             )}
-            <button onClick={props.clickForPages}>Previous</button>
-            <button onClick={props.nextPage}>Next</button>
+            {!props.apiCharLoaded &&
+                <div>
+                    <button onClick={props.previousPage}>Previous</button>
+                    <button onClick={props.nextPage}>Next</button>
+                </div>
+            }
         </div>
     )
 }

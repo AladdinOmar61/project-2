@@ -12,3 +12,9 @@ export const CallChar = async (character) => {
     console.log(getChar.data.image);
     return getChar.data;
 }
+
+export const CharPage = async (pageNum=0) => {
+    const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNum}`);
+    return page.data.results;
+}
+

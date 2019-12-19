@@ -335,4 +335,8 @@ footer {
     font-size: 7px;
     margin-right: 25%;
   }
+  .single-img {
+    height: 200px;
+    width: 250px;
+  }
 }

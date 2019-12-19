@@ -86,7 +86,7 @@ class App extends Component {
               <li><Link className="nav-home" to="/">Home</Link></li>
             </div>
             <div className="char-anim">
-              <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">Ric-Pics</Link></li>
+              <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">RicPics</Link></li>
             </div>
             <div className="search-anim">
               <li><Link className="nav-char" to="/SingleChar">Search</Link></li>

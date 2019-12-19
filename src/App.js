@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { Link, Route } from 'react-router-dom';
 
-import { CallApi } from './components/CallApi';
+// import { CallApi } from './components/CallApi';
 import { CallChar } from './components/CallApi';
 
 import CharList from './components/CharList';
@@ -32,18 +32,27 @@ class App extends Component {
   CharPage = async () => {
     const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${this.state.currPage}`);
     console.log(page);
-    return page;
+    return page.data.results;
 }
+
+  nextPage = async (e) => {
+    e.preventDefault();
+    const pages = await this.CharPage();
+    let next = this.state.currPage+1;
+    this.setState({
+      currPage: next,
+      charNames: pages,
+    })
+  }
 
   onSoundClick = (e) => {
     e.preventDefault();
-    console.log('wubba');
     this.sound.play();
   }
 
   clickForChars = async (e) => {
     e.preventDefault();
-    const getChars = await CallApi();
+    const getChars = await this.CharPage();
     this.setState({
       charNames: getChars,
       apiCharLoaded: true,
@@ -95,7 +104,7 @@ class App extends Component {
         </nav>
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
-          <Route path="/CharList" render={() => <CharList pageNum={this.pageNum} clickForPages={this.clickForPages} charNames={this.state.charNames} />}></Route>
+          <Route path="/CharList" render={() => <CharList nextPage={this.nextPage} charNames={this.state.charNames} />}></Route>
           <Route path="/SingleChar" render={() => <SingleChar value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
         <Footer onSoundClick={this.onSoundClick} />

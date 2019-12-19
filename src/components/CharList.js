@@ -13,7 +13,7 @@ const CharList = (props) => {
                 </div>
             )}
             <button onClick={props.clickForPages}>Previous</button>
-            <button onClick={props.clickForPages}>Next</button>
+            <button onClick={props.nextPage}>Next</button>
         </div>
     )
 }

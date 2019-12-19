@@ -10,8 +10,7 @@ html {
   background: url("https://i.imgur.com/3UxkcJ8.jpg");
   background-size: cover;
 }
-/* http://getwallpapers.com/wallpaper/full/1/e/c/1254729-desktop-space-backgrounds-1920x1080-notebook.jpg */
-/* https://i.imgur.com/3UxkcJ8.jpg */
+
 
 .image {
   margin-left: 15%;
@@ -183,7 +182,7 @@ img:focus {
   height: 420px;
   border-radius: 100%;
   animation: spin 7s linear infinite;
-  transform: rotate3d()
+  /* transform: rotate3d() */
 }
 
 @keyframes spin {
@@ -266,17 +265,59 @@ footer {
   margin-top: 3%;
 }
 
-@media (max-width: 500px) {
+.next {
+  background-color: black;
+  border: solid lightgreen 1.5px;
+  border-radius: 14px;
+  /* margin-left: 10px; */
+  color: lightgreen;
+  /* margin-right: 5%; */
+  /* height: 40px; */
+}
+
+.previous {
+  background-color: black;
+  border: solid lightgreen 1.5px;
+  border-radius: 14px;
+  /* margin-left: 10px; */
+  color: lightgreen;
+  margin-right: 5%;
+  /* height: 40px; */
+}
+
+.morty {
+  background-color: black;
+  border: solid lightgreen 3px;
+  border-radius: 14px;
+  color: lightgreen;
+  margin-right: 75%;
+}
+
+.schmorty {
+  background-color: black;
+  border: solid lightgreen 3px;
+  border-radius: 14px;
+  color: lightgreen;
+}
+
+.ricpic-votes {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
   body{
   margin: 0 auto;
   text-align: center;
   }
   .title{
     font-size: 30px;
+    font-family: 'Get schwifty';
     /* margin-left: 50px; */
   }
   .slogan {
     font-size: 15px;
+    font-family: 'Get schwifty';
     /* margin-left: 70px; */
   }
   .nav-home {

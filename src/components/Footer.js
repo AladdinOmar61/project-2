@@ -4,7 +4,7 @@ function Footer (props) {
     return (
         <div>
             <footer>
-                <p onClick={props.onSoundClick} className="wubaa">Wubba Lubba Dub Dub®</p>
+                <p onClick={props.onSoundClick} className="wubba">Wubba Lubba Dub Dub®</p>
             </footer>
         </div>
     )

@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import soundclip from "./Audio/WUBBALUBBADUBDUB SOUND EFFECT.mp3";
+// import soundclip2 from "./Audio/OOOOWEEE #1 Sound Clip Mr. Poopybutthole Rick and Morty.mp3";
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +28,8 @@ class App extends Component {
     }
     this.onSoundClick = this.onSoundClick.bind(this);
     this.sound = new Audio(soundclip);
+    // this.onSoundClick2 = this.onSoundClick2.bind(this);
+    // this.sound2 = new Audio(soundclip2);
   }
 
   voteUp = (e) => {
@@ -80,6 +83,12 @@ class App extends Component {
   onSoundClick = (e) => {
     e.preventDefault();
     this.sound.play();
+  }
+
+  onSoundClick2 = () => {
+    // e.preventDefault();
+    this.sound2.play();
+    console.log('popo')
   }
 
   clickForChars = async (e) => {
@@ -137,7 +146,7 @@ class App extends Component {
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
           <Route path="/CharList" render={() => <CharList apiCharLoaded={this.apiCharLoaded} nextPage={this.nextPage} previousPage={this.previousPage} charNames={this.state.charNames} />}></Route>
-          <Route path="/SingleChar" render={() => <SingleChar votes={this.state.votes} voteUp={this.voteUp} voteDown={this.voteDown} value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+          <Route path="/SingleChar" render={() => <SingleChar onSoundClick2={this.onSoundClick2} votes={this.state.votes} voteUp={this.voteUp} voteDown={this.voteDown} value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
         <Footer onSoundClick={this.onSoundClick} />
       </div>

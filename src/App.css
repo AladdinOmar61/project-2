@@ -305,6 +305,14 @@ footer {
   justify-content: space-between;
 }
 
+.fa-thumbs-up {
+  background-color: lightgreen
+}
+
+.vote-num {
+  font-size: 30px;
+}
+
 @media only screen and (max-width: 500px) {
   body{
   margin: 0 auto;

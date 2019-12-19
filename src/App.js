@@ -12,7 +12,8 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import soundclip from "./Audio/WUBBALUBBADUBDUB SOUND EFFECT.mp3";
-// import soundclip2 from "./Audio/OOOOWEEE #1 Sound Clip Mr. Poopybutthole Rick and Morty.mp3";
+import soundclip2 from "./Audio/OOOOWEEE Mr. Poopybutthole Sound Clip S2 Finale Rick and Morty.mp3";
+import soundclip3 from './Audio/Oh, geez Rick and Morty S01E01.mp3';
 
 class App extends Component {
   constructor(props) {
@@ -26,14 +27,14 @@ class App extends Component {
       currPage: 1,
       votes: 0
     }
-    this.onSoundClick = this.onSoundClick.bind(this);
     this.sound = new Audio(soundclip);
-    // this.onSoundClick2 = this.onSoundClick2.bind(this);
-    // this.sound2 = new Audio(soundclip2);
+    this.sound2 = new Audio(soundclip2);
+    this.sound3 = new Audio(soundclip3)
   }
 
   voteUp = (e) => {
     e.preventDefault();
+    this.sound2.play();
     let count = this.state.votes + 1;
     this.setState({
       votes: count
@@ -42,6 +43,7 @@ class App extends Component {
 
   voteDown = (e) => {
     e.preventDefault();
+    this.sound3.play();
     if (this.state.votes === 0) {
       let count = this.state.votes - 0;
       this.setState({

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
 
 import { Link, Route } from 'react-router-dom';
 
 import { CallChar } from './components/CallApi';
+import { CharPage } from './components/CallApi';
 
 import CharList from './components/CharList';
 import SingleChar from './components/SingleChar';
@@ -22,21 +22,41 @@ class App extends Component {
       charNames: [],
       charSearch: "",
       charImg: [],
-      currPage: 1
+      currPage: 1,
+      votes: 0
     }
     this.onSoundClick = this.onSoundClick.bind(this);
     this.sound = new Audio(soundclip);
   }
 
-  CharPage = async (pageNum=0) => {
-    const page = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNum}`);
-    return page.data.results;
-}
+  voteUp = (e) => {
+    e.preventDefault();
+    let count = this.state.votes + 1;
+    this.setState({
+      votes: count
+    })
+  }
+
+  voteDown = (e) => {
+    e.preventDefault();
+    if (this.state.votes === 0) {
+      let count = this.state.votes - 0;
+      this.setState({
+        votes: count
+      })
+    } else {
+      let count = this.state.votes - 1;
+      this.setState({
+        votes: count
+      })
+    }
+  }
+
 
   nextPage = async (e) => {
     e.preventDefault();
-    let next = this.state.currPage+1;
-    let pages = await this.CharPage(next);
+    let next = this.state.currPage + 1;
+    let pages = await CharPage(next);
     this.setState({
       currPage: next,
       charNames: pages,
@@ -47,8 +67,8 @@ class App extends Component {
 
   previousPage = async (e) => {
     e.preventDefault();
-    let previous = this.state.currPage-1;
-    const pages = await this.CharPage(previous);
+    let previous = this.state.currPage - 1;
+    const pages = await CharPage(previous);
     this.setState({
       currPage: previous,
       charNames: pages,
@@ -64,7 +84,7 @@ class App extends Component {
 
   clickForChars = async (e) => {
     e.preventDefault();
-    const getChars = await this.CharPage();
+    const getChars = await CharPage();
     this.setState({
       charNames: getChars,
       apiCharLoaded: true,
@@ -117,7 +137,7 @@ class App extends Component {
         <main>
           <Route exact path="/" render={() => <Home />}></Route>
           <Route path="/CharList" render={() => <CharList apiCharLoaded={this.apiCharLoaded} nextPage={this.nextPage} previousPage={this.previousPage} charNames={this.state.charNames} />}></Route>
-          <Route path="/SingleChar" render={() => <SingleChar value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
+          <Route path="/SingleChar" render={() => <SingleChar votes={this.state.votes} voteUp={this.voteUp} voteDown={this.voteDown} value={this.state.charSearch} onCharSubmit={this.onCharSubmit} apiImgLoaded={this.state.apiImgLoaded} onCharClick={this.onCharClick} charSearch={this.charSearch} charImg={this.state.charImg} />}></Route>
         </main>
         <Footer onSoundClick={this.onSoundClick} />
       </div>

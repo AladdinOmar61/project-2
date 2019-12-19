@@ -14,8 +14,8 @@ const CharList = (props) => {
             )}
             {!props.apiCharLoaded &&
                 <div>
-                    <button onClick={props.previousPage}>Previous</button>
-                    <button onClick={props.nextPage}>Next</button>
+                    <button className="previous" onClick={props.previousPage}>Previous</button>
+                    <button className="next" onClick={props.nextPage}>Next</button>
                 </div>
             }
         </div>

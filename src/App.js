@@ -32,6 +32,13 @@ class App extends Component {
     this.sound3 = new Audio(soundclip3)
   }
 
+  resetPage = (e) => {
+    e.preventDefault();
+    this.setState({
+      currPage: 1
+    })
+  }
+
   voteUp = (e) => {
     e.preventDefault();
     this.sound2.play();
@@ -135,13 +142,13 @@ class App extends Component {
         <nav>
           <ul>
             <div className="home-anim">
-              <li><Link className="nav-home" to="/">Home</Link></li>
+              <li onClick={this.resetPage}><Link className="nav-home" to="/">Home</Link></li>
             </div>
             <div className="char-anim">
               <li onClick={this.clickForChars}><Link className="nav-list" to="/CharList">RicPics</Link></li>
             </div>
             <div className="search-anim">
-              <li><Link className="nav-char" to="/SingleChar">Search</Link></li>
+              <li onClick={this.resetPage}><Link className="nav-char" to="/SingleChar">Search</Link></li>
             </div>
           </ul>
         </nav>

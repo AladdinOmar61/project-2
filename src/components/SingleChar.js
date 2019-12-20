@@ -14,9 +14,7 @@ function SingleChar(props) {
                 {props.apiImgLoaded &&
                     <div className="char-info">
                         <img className="single-img" src={props.charImg.image} alt="" />
-                        <button className="morty" onClick={props.voteUp}>
-                                Give this a morty
-                                </button>
+                        <button className="morty" onClick={props.voteUp}>Give this a morty</button>
                         <button className="schmorty" onClick={props.voteDown}>Give this a schmorty</button>
                         <p className="vote-num">{props.votes}</p>
                         <p className="name-list">Name: {props.charImg.name}</p>

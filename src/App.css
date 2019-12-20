@@ -388,4 +388,24 @@ footer {
     height: 200px;
     width: 250px;
   }
+
+  .morty {
+    background-color: black;
+    border: solid lightgreen 3px;
+    border-radius: 14px;
+    color: lightgreen;
+    margin-right: 25%;
+  }
+  
+  .schmorty {
+    background-color: black;
+    border: solid lightgreen 3px;
+    border-radius: 14px;
+    color: lightgreen;
+  }
+
+  .ricpic-votes {
+    display: flex;
+    justify-content: space-between;
+  }
 }
